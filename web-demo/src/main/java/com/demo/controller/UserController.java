@@ -30,7 +30,6 @@ public class UserController {
 	public String getAllUser(HttpServletRequest request){
 		
 		List<User> findAll = userService.findAll();
-		
 		request.setAttribute("userList", findAll);
 		return "/allUser";
 	}

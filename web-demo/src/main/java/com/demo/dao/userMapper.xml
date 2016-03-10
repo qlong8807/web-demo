@@ -8,11 +8,11 @@
 <mapper namespace="com.demo.dao.UserMapper">
 	
 	<insert id="save" parameterType="User">
-		insert into user(name) values(#{name})
+		insert into user(name,age) values(#{name},#{age})
 	</insert>
 	
 	<update id="update" parameterType="User">
-		update user set name=#{name} where id=#{id}
+		update user set name=#{name},age=#{age} where id=#{id}
 	</update>
 	
 	<delete id="delete" parameterType="int">
@@ -21,11 +21,11 @@
 	
 	 <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路劲 -->  
 	<select id="findById" parameterType="int" resultType="User">
-		select id,name from user where id=#{id}
+		select id,name,age from user where id=#{id}
 	</select>
 	
 	<select id="findAll" resultType="User">
-		select id,name from user
+		select id,name,age from user
 	</select>
 	
 </mapper>
